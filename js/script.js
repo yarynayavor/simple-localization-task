@@ -21,6 +21,7 @@ var currentLang = function(current) {
 	}
 	var $save = document.querySelector('html body button#save')
 	$save.addEventListener('click', function() {
+		//alert('Your language saved successfully in Local Storage!');
 		localStorage.setItem("lang", current);
 	});
 }
@@ -43,6 +44,10 @@ if (localStorage.getItem('lang')){
 		uaRadio.checked=true;
 		currentLang(localL);
 	}
+}
+else {
+	uaRadio.checked=true;
+	currentLang('ua');
 }
 /*This is function which select current language by clicking on radio buttons */
 var getCurrentLanguage = function() {
@@ -81,4 +86,5 @@ var getCurrentLanguage = function() {
   	}
   });
 }
+
 getCurrentLanguage();
